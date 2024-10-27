@@ -115,16 +115,13 @@ int main() {
 		else {
 			cout << "Invalid choice";
 		}
-		cout << "\nWould you like to continue?(Y/N)";
-		cin >> con;
-		if (con == 'n' || con == 'N') {
-			cout << "Exiting Program...";
-		}
-		else if (con == 'y' || con == 'Y') {}
-		else {
-			cout << "invalid input: enter Y/N";
-			continue;
-		}
+		do {
+			cout << "\nWould you like to continue? (Y/N): ";
+			cin >> con;
+			if (con != 'y' && con != 'Y' && con != 'n' && con != 'N') {
+				cout << "Invalid input: please enter Y or N." << endl;
+			}
+		} while (con != 'y' && con != 'Y' && con != 'n' && con != 'N');
 	} while (con == 'y' || con == 'Y');
 	
 
