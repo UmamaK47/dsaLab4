@@ -82,7 +82,12 @@ int main() {
 	string choice;
 	char con = 'y';
 	cout << "Enter size of queue: ";
-	cin >> size;
+	
+	while (!(cin >> size)) {
+		cout << "Invalid input. Please enter an integer: ";
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
 	Queue q(size);
 	do {
 		cout << "Queue Operations:\n1. Insert\n2. Delete\n3. Peek\n";
